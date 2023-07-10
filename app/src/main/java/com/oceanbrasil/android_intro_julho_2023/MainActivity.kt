@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         btEnviar.setOnClickListener {
             // O código dentro das chaves será executado ao clicar no botão
 
+            // Atualizamos o texto do TextView de ID tvResultado
             tvResultado.text = "Samsung Ocean!"
         }
     }
