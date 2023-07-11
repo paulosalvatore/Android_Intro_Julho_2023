@@ -23,8 +23,15 @@ class MainActivity : AppCompatActivity() {
         btEnviar.setOnClickListener {
             // O código dentro das chaves será executado ao clicar no botão
 
-            // Atualizamos o texto do TextView de ID tvResultado
-            tvResultado.text = etNome.text
+            // Caso o etNome esteja em branco
+            // isEmpty = Checa apenas length (quantidade de caracteres)
+            // isBlank = Além do length, checa se os caracteres são espaços em branco
+            if (etNome.text.isBlank()) {
+                etNome.error = "Digite um nome válido!"
+            } else {
+                // Atualizamos o texto do TextView de ID tvResultado
+                tvResultado.text = etNome.text
+            }
         }
     }
 }
