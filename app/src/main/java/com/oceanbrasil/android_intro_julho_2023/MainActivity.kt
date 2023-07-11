@@ -1,5 +1,7 @@
 package com.oceanbrasil.android_intro_julho_2023
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -32,6 +34,20 @@ class MainActivity : AppCompatActivity() {
                 // Atualizamos o texto do TextView de ID tvResultado
                 tvResultado.text = etNome.text
             }
+        }
+
+        // Comportamento do botão de abrir nova tela
+
+        // Buscamos o botão na tela
+        val btAbrirNovaTela = findViewById<Button>(R.id.btAbrirNovaTela)
+
+        // Adicionamos um Listener
+        btAbrirNovaTela.setOnClickListener {
+            // Criamos a Intent de sair da tela atual (this) para a nova tela (ResultadoActivity::class.java)
+            val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
+
+            // Iniciamos a nova Activity
+            startActivity(novaTelaIntent)
         }
     }
 }
