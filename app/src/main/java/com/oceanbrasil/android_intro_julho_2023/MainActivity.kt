@@ -45,6 +45,11 @@ class MainActivity : AppCompatActivity() {
             // Criamos a Intent de sair da tela atual (this) para a nova tela (ResultadoActivity::class.java)
             val novaTelaIntent = Intent(this, ResultadoActivity::class.java)
 
+            val nomeDigitado = etNome.text.toString()
+
+            // Adicionar dados extras à essa Intent
+            novaTelaIntent.putExtra("NOME_DIGITADO", nomeDigitado)
+
             // Iniciamos a nova Activity
             startActivity(novaTelaIntent)
         }
